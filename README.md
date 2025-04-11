@@ -184,8 +184,8 @@ To understand full-stack MERN apps with Vercel + Render deployment, watch:
 
 **Bittu Kumar**  
 📍 Sir Padampat Singhania University  
-🔗 [LinkedIn](https://linkedin.com/in/your-profile)  
-🔗 [GitHub](https://github.com/your-username)
+🔗 [LinkedIn](https://www.linkedin.com/in/bittu-kumar-812368246/)  
+🔗 [GitHub](https://github.com/Bittu-kumar2003)
 
 ---
 
