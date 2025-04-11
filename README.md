@@ -137,21 +137,21 @@ npm run dev
 1. `./assets/app-preview.png`  
    _Homepage with list view_
    ```
-   ![Screenshot (96)](https://github.com/user-attachments/assets/d4f0010a-4415-41eb-b4b4-cdab47c192f3)
+  ![Screenshot (96)](https://github.com/user-attachments/assets/d4f0010a-4415-41eb-b4b4-cdab47c192f3)
 
    
    ```
 
 2. `./assets/add-job.png`  
    _Form to add job_
-   ```md
-  ![Screenshot (97)](https://github.com/user-attachments/assets/dabc13c4-4d1e-4413-870c-0970ae80d984)
+   ```
+![Screenshot (97)](https://github.com/user-attachments/assets/dabc13c4-4d1e-4413-870c-0970ae80d984)
 
    ```
 
 3. `./assets/job-list.png`  
    _All job entries_
-   ```md
+   ```
 ![Screenshot (98)](https://github.com/user-attachments/assets/bab0b52a-2956-4884-ab54-68383a23ad15)
 
    ```
