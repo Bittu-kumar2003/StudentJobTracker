@@ -1,164 +1,191 @@
 # 🎓 Student Job Tracker
 
-A full-stack web application for students to manage and track their job applications. This tool allows users to add, view, update, and delete job records, helping them stay organized during job hunts.
+A full-stack web app to help students manage and track their job applications — Add, View, Edit, and Delete jobs. Built using React (Vite) + Node.js + Express + MongoDB.
 
 ---
 
-## 🛠 Tech Stack
+## 🔧 Tech Stack
 
-| Layer       | Technology             |
-|-------------|------------------------|
-| Frontend    | React (with Vite)      |
-| Backend     | Node.js, Express.js    |
-| Database    | MongoDB Atlas          |
-| Deployment  | Vercel (Frontend), Render (Backend) |
+- **Frontend**: React (Vite)
+- **Backend**: Node.js + Express
+- **Database**: MongoDB Atlas
+- **Deploy**: Vercel (Frontend), Render (Backend)
 
 ---
 
-## 🚀 Features
+## 📁 Project Folder Structure
 
-- ➕ Add Job Application  
-  (Fields: Company, Role, Status, Date, Link)
-- 📄 View All Applications in a clean layout
-- 🔄 Update Application Status
-- ❌ Delete Application
-- 🔍 Filter by status/date (optional future enhancement)
+```
+student-job-tracker/
+├── backend/
+│   ├── models/
+│   │   └── Job.js
+│   ├── routes/
+│   │   └── jobs.js
+│   └── server.js
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── JobForm.jsx
+│   │   │   └── JobList.jsx
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── index.html
+├── README.md
+```
 
 ---
 
-## 📸 Screenshots
+## 🛠 Installation Steps
 
-👉 You can include screenshots here for better clarity.
+### 📌 Prerequisites
 
-1. **App Preview**  
-   _Recommended image path:_ `./assets/app-preview.png`
+- Node.js installed
+- MongoDB Atlas account
+- Git installed
 
+### 🔹 Step 1: Clone Repo
 
-2. **Add Job Form**  
-_Show the form UI_  
+```bash
+git clone https://github.com/your-username/student-job-tracker.git
+cd student-job-tracker
+```
 
-3. **Job List View**  
-_Display of job applications_  
- Step 2: Backend Setup
-bash
-Copy
-Edit
+### 🔹 Step 2: Setup Backend
+
+```bash
 cd backend
 npm install
-🧪 Create .env File
-Create a file named .env inside /backend and add:
+```
 
-env
-Copy
-Edit
+Create `.env` file inside `/backend`:
+
+```env
 PORT=5000
 MONGO_URI=your_mongodb_atlas_connection_string
-▶️ Start the Backend
-bash
-Copy
-Edit
-node server.js
-Your backend API will be running at:
+```
 
-bash
-Copy
-Edit
-http://localhost:5000/api/jobs
-💻 Step 3: Frontend Setup
-bash
-Copy
-Edit
+Run backend server:
+
+```bash
+node server.js
+```
+
+> Backend runs at `http://localhost:5000/api/jobs`
+
+### 🔹 Step 3: Setup Frontend
+
+```bash
 cd ../frontend
 npm install
-🧪 Create .env File
-Create a file named .env inside /frontend and add:
+```
 
-env
-Copy
-Edit
+Create `.env` file inside `/frontend`:
+
+```env
 VITE_API_URL=http://localhost:5000/api/jobs
-▶️ Start the Frontend
-bash
-Copy
-Edit
+```
+
+Run frontend app:
+
+```bash
 npm run dev
-The frontend will start at:
+```
 
-arduino
-Copy
-Edit
-http://localhost:5173
-🌍 Deployment
-🔵 Backend Deployment (Render)
-Go to https://render.com
+> Frontend runs at `http://localhost:5173`
 
-Click "New Web Service"
+---
 
-Connect your GitHub repo and choose /backend
+## 🌐 Deployment Guide
 
-Environment:
+### 🚀 Backend on Render
 
-Build Command: npm install
+1. Go to [https://render.com](https://render.com)
+2. Create new web service
+3. Connect to your repo → Select `/backend`
+4. Add Environment Variables:
+   ```
+   MONGO_URI=your_connection_string
+   ```
+5. Build command: `npm install`  
+   Start command: `node server.js`
 
-Start Command: node server.js
+### 🚀 Frontend on Vercel
 
-Add Environment Variable:
+1. Go to [https://vercel.com](https://vercel.com)
+2. Import your frontend repo (`/frontend`)
+3. Add environment variable:
+   ```
+   VITE_API_URL=https://your-api.onrender.com/api/jobs
+   ```
+4. Deploy and done!
 
-ini
-Copy
-Edit
-MONGO_URI=your_mongodb_connection_string
-Deploy and note the Render URL (e.g., https://your-api.onrender.com)
+---
 
-⚪ Frontend Deployment (Vercel)
-Go to https://vercel.com
+## ✨ Features
 
-Import your frontend project (/frontend)
+- Add job with company name, position, date, link, status
+- View all jobs in a list
+- Edit job status
+- Delete job
+- Clean UI, responsive layout
 
-Add Environment Variable:
+---
 
-ini
-Copy
-Edit
-VITE_API_URL=https://your-api.onrender.com/api/jobs
-Deploy!
+## 📸 Suggested Screenshot Placements
 
-Your live frontend URL will look like:
+1. `./assets/app-preview.png`  
+   _Homepage with list view_
+   ```md
+   ![App Preview](./assets/app-preview.png)
+   ```
 
-arduino
-Copy
-Edit
-https://your-app.vercel.app
-🧼 Environment File Sample
-🔐 /backend/.env
-env
-Copy
-Edit
-PORT=5000
-MONGO_URI=mongodb+srv://your-cluster.mongodb.net/student-job-tracker
-🔐 /frontend/.env
-env
-Copy
-Edit
-VITE_API_URL=https://your-api.onrender.com/api/jobs
-🛡️ Error Handling Tips
-Make sure res.data is always an array before calling jobs.map(...):
+2. `./assets/add-job.png`  
+   _Form to add job_
+   ```md
+   ![Add Job](./assets/add-job.png)
+   ```
 
-js
-Copy
-Edit
-setJobs(Array.isArray(res.data) ? res.data : []);
-Use try-catch in all async calls.
+3. `./assets/job-list.png`  
+   _All job entries_
+   ```md
+   ![Job List](./assets/job-list.png)
+   ```
 
-✨ Future Improvements (Suggestions)
-🔍 Filter jobs by status or date
+---
 
-🔔 Notifications for upcoming interviews
+## 🎥 Suggested Video Tutorial
 
-📅 Calendar integration
+To understand full-stack MERN apps with Vercel + Render deployment, watch:  
+📺 [MERN Stack Project Full Tutorial](https://www.youtube.com/watch?v=4yqu8YF29cU)
 
-📊 Dashboard for statistics
+---
 
-🤝 Contributing
-Contributions are welcome! If you have suggestions or find a bug, feel free to open an issue or pull request.
+## 💡 Tips & Gotchas
+
+- Make sure backend response is always an array:
+  ```js
+  setJobs(Array.isArray(res.data) ? res.data : []);
+  ```
+- Keep your `.env` safe, never push it to GitHub.
+- Use `cors` in your backend to allow cross-origin requests:
+  ```js
+  const cors = require("cors");
+  app.use(cors());
+  ```
+
+---
+
+## 👨‍💼 Author
+
+**Bittu Kumar**  
+📍 Sir Padampat Singhania University  
+🔗 [LinkedIn](https://linkedin.com/in/your-profile)  
+🔗 [GitHub](https://github.com/your-username)
+
+---
+
+## 📄 License
+
+MIT License
 
